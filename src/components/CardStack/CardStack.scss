@@ -1,0 +1,130 @@
+// Variables
+$card-height: 100px;
+$card-padding: 12px 19px;
+$card-spacing-closed: 10px;
+$card-spacing-open: 112px;
+$stack-offset: -88px;
+$container-padding: 20px;
+$animation-duration: 0.3s;
+$animation-easing: ease-out;
+
+// Colors
+$card-bg: #ffffff;
+$main-card-border: #ddd;
+$subcard-bg-hover: #f0f1f2;
+$subcard-border: #e0e0e0;
+$text-primary: #333;
+$text-secondary: #666;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+.card-stack-container {
+	position: relative;
+	max-width: 700px;
+	width: 100%;
+	margin-bottom: 2rem;
+	align-self: flex-start;
+	padding: $container-padding;
+	transition: height $animation-duration $animation-easing;
+
+	&.closed {
+		height: calc(150px + (var(--total, 0) - 1) * #{$card-spacing-closed});
+	}
+
+	&.open {
+		height: calc(230px + (var(--total, 0) - 1) * #{$card-spacing-open});
+	}
+}
+
+.main-card {
+	position: relative;
+	z-index: 100;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: $card-padding;
+	height: $card-height;
+	background: $card-bg;
+	border: 1px solid $main-card-border;
+	border-radius: 8px;
+	box-shadow: $shadow-md;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	user-select: none;
+
+	&:hover {
+		box-shadow: $shadow-md-hover;
+	}
+}
+
+.card-icon {
+	width: 58px;
+	height: 58px;
+	margin-right: 1rem;
+	object-fit: contain;
+}
+
+.card-content {
+	flex: 1;
+
+	h3 {
+		margin: 0;
+		color: $text-primary;
+		font-size: 1.2rem;
+	}
+}
+
+.expand-icon {
+	margin-left: 1rem;
+	color: $text-secondary;
+	font-size: 1.2rem;
+	transition: transform 0.3s ease;
+}
+
+.subcards-container {
+	position: relative;
+	margin-top: $stack-offset;
+
+	&.closed {
+		height: calc(var(--total) * #{$card-spacing-closed});
+	}
+
+	&.open {
+		height: calc(var(--total) * #{$card-spacing-open} + #{$card-height});
+	}
+}
+
+.subcard {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $card-height;
+	padding: $card-padding;
+	background: $card-bg;
+	border: 1px solid $subcard-border;
+	border-radius: 6px;
+	box-shadow: $shadow-sm;
+	box-sizing: border-box;
+	transition:
+		transform $animation-duration $animation-easing,
+		box-shadow 0.3s ease;
+
+	&.closed {
+		transform: translateY(calc(var(--index) * #{$card-spacing-closed}));
+		z-index: calc(var(--total) - var(--index));
+	}
+
+	&.open {
+		transform: translateY(calc(var(--index) * #{$card-spacing-open} + #{$card-height}));
+		z-index: calc(var(--total) - var(--index));
+
+		&:hover {
+			box-shadow: $shadow-lg;
+		}
+	}
+}
