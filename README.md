@@ -1,16 +1,41 @@
-# React + Vite
+# 📊 EasyEquities Dropdown
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I didn't like the dropdown component on EasyEquities so I made a new one.
 
-Currently, two official plugins are available:
+## 🛠️ Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ **React 19** - Modern React with latest features
+- ⚡ **Vite** - Lightning-fast build tool and dev server
+- 🎨 **Sass** - Enhanced styling with SCSS
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### 📋 Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 💻 Clone and Run Locally
+
+1. **📦 Clone the repository**
+
+    ```bash
+    git clone https://github.com/yourusername/easyequities-dropdown.git
+    cd easyequities-dropdown
+    ```
+
+2. **📥 Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3. **🔥 Start the development server**
+
+    ```bash
+    npm run dev
+    ```
+
+4. **🌐 Open your browser**
+
+    Navigate to `http://localhost:5173` (or the port shown in your terminal)
