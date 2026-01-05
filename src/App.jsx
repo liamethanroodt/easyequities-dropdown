@@ -29,7 +29,7 @@ function SubcardContent({ title, description }) {
 }
 
 function App() {
-	const subcards = [
+	const subcards1 = [
 		<SubcardContent
 			title="United States Markets"
 			description="Tap into the largest financial market in the world by investing in a diverse portfolio of U.S. stocks and securities."
@@ -44,12 +44,19 @@ function App() {
 			description="Expand your investment reach across European markets, accessing a wide range of stocks across the continent."
 		/>,
 	];
+	const subcards2 = [
+		<SubcardContent
+			title="United States Markets"
+			description="Tap into the largest financial market in the world by investing in a diverse portfolio of U.S. stocks and securities."
+		/>,
+		<SubcardContent title="Australian Markets" description="Diversify your portfolio by investing in the dynamic and diverse Australian stock market." />,
+	];
 
 	return (
 		<div className="app">
 			<div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-				<CardStack title={`${subcards?.length} Available Accounts`} subcards={subcards} />
-				<CardStack title={`${subcards?.length} Available Accounts`} subcards={subcards} />
+				<CardStack title={`${subcards1?.length} Available Accounts`} subcards={subcards1} />
+				{/* <CardStack title={`${subcards1?.length} Available Accounts`} subcards={subcards2} /> */}
 			</div>
 		</div>
 	);
