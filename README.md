@@ -4,9 +4,9 @@ I didn't like the dropdown component on EasyEquities so I made a new one.
 
 ## 🛠️ Stack
 
-- ⚛️ **React 19** - Modern React with latest features
-- ⚡ **Vite** - Lightning-fast build tool and dev server
-- 🎨 **Sass** - Enhanced styling with SCSS
+- ⚛️ **React 19**
+- ⚡ **Vite**
+- 🎨 **Sass**
 
 ## 🚀 Getting Started
 
